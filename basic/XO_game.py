@@ -26,7 +26,3 @@ else :
             f = 1
 if f == 0 :
     print("Draw.")
-
-
-    # its for test:) 
-    # test2
