@@ -1,0 +1,56 @@
+from random import randint
+import os
+os.system('cls')
+
+
+class Point:
+
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def falls_in_rectangle(self, rectangle):
+        if rectangle.lowleft.x < self.x < rectangle.upright.x \
+                and rectangle.lowleft.y < self.y < rectangle.upright.y:
+            return True
+        else:
+            return False
+
+    def distance_from_point(self, point):
+        return ((self.x-point.x)**2 + (self.y-point.y)**2)**0.5
+
+    def coordinates(self):
+        print("-------Point Coordinates------")
+        print("X : {}      Y: {}".format(self.x, self.y))
+        print("-----------------------------")
+
+
+class Rectangle:
+    def __init__(self, lowleft, upright):
+        self.lowleft = lowleft
+        self.upright = upright
+
+    def coordinates(self):
+        print("------Recangle Coordinates-----")
+        print("Up Right:({} , {})".format(self.upright.x, self.upright.y))
+        print("Low Left:({} , {})".format(self.lowleft.x, self.lowleft.y))
+        print("-----------------------------")
+
+    def area(self):
+        return (self.upright.x-self.lowleft.x) * \
+            (self.upright.y-self.lowleft.y)
+
+
+# point1 = Point(randint(0, 30), randint(0, 30))
+point2 = Point(randint(0, 9), randint(0, 9))
+point3 = Point(randint(10, 30), randint(10, 30))
+
+rect1 = Rectangle(point2, point3)
+
+# point1.coordinates()
+rect1.coordinates()
+# user_point = Point(int(input("Enter x: ")), int(input("Enter y: ")))
+# user_point.coordinates()
+
+print(rect1.area())
+# print(user_point.falls_in_rectangle(rect1))

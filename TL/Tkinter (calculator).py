@@ -1,0 +1,31 @@
+from tkinter import *
+root = Tk()
+#====================== setting =======================
+root.geometry('320x500')
+root.title('Calculator')
+root.resizable(width=False , height=False)
+color = 'Gray'
+root.configure(bg = color)
+#====================== Frames ========================
+top_first = Frame(root , width=320 , height=125 , bg='pink')
+top_first.pack(side=TOP)
+top_second = Frame(root , width=320 , height=125 , bg = 'blue')
+top_second.pack(side=TOP)
+top_third = Frame(root , width=320 , height=125 , bg='yellow')
+top_third.pack(side=TOP)
+top_forth = Frame(root , width=320 , height=125 , bg= 'red')
+top_forth.pack(side=TOP)
+#======================= Buttons ======================
+btn_plus = Button(top_third , text='+' , width= 6 , height= 1 , highlightbackground=color)
+btn_plus.pack(side=LEFT , padx= 0.3 , pady = 0.3)
+btn_minus = Button(top_third , text='-' , width= 6 ,highlightbackground=color)
+btn_minus.pack(side=LEFT)
+btn_mult = Button(top_third , text='*', width= 6 ,highlightbackground=color)
+btn_mult.pack(side=LEFT , padx= 0.4 , pady = 0.5)
+btn_div = Button(top_third , text='/' , width= 6 ,highlightbackground=color)
+btn_div.pack(side=LEFT , padx= 0.4 , pady = 0.5)
+btn_li = Button(top_third , text='n' , width= 6 , height= 1 , highlightbackground=color)
+btn_li.pack(side=LEFT , padx= 0.4 , pady = 0.5)
+btn_lk = Button(top_third , text='i' , width= 6 , height= 1 , highlightbackground=color)
+btn_lk.pack(side=LEFT, padx= 0.4 , pady = 0.5)
+root.mainloop()
